@@ -1,0 +1,111 @@
+[gd_scene load_steps=19 format=3 uid="uid://dbkpvfwnp7s1t"]
+
+[ext_resource type="Script" uid="uid://d04mreb6eo3ca" path="res://mainmenu.gd" id="1_5oru5"]
+[ext_resource type="Texture2D" uid="uid://d3tsnagrgcnln" path="res://png/11zon_GIF-to-Images (2)/1.jpeg" id="2_qx8sy"]
+[ext_resource type="Texture2D" uid="uid://dhmret6cxm767" path="res://png/11zon_GIF-to-Images (2)/2.jpeg" id="3_wwmul"]
+[ext_resource type="Texture2D" uid="uid://bhbi6sju1kv26" path="res://png/11zon_GIF-to-Images (2)/3.jpeg" id="4_a7tfh"]
+[ext_resource type="Texture2D" uid="uid://bhup0fu35g860" path="res://png/11zon_GIF-to-Images (2)/4.jpeg" id="5_lnljo"]
+[ext_resource type="Texture2D" uid="uid://dcfw7fmhu1avw" path="res://png/11zon_GIF-to-Images (2)/5.jpeg" id="6_jdyya"]
+[ext_resource type="Texture2D" uid="uid://j06muwh228dg" path="res://png/11zon_GIF-to-Images (2)/6.jpeg" id="7_d55l6"]
+[ext_resource type="Texture2D" uid="uid://ckd4yt788e2n" path="res://png/11zon_GIF-to-Images (2)/7.jpeg" id="8_af83j"]
+[ext_resource type="Texture2D" uid="uid://cvb6x8mk1vmrx" path="res://png/11zon_GIF-to-Images (2)/8.jpeg" id="9_me04n"]
+[ext_resource type="Texture2D" uid="uid://c0nicwk1ak24y" path="res://png/11zon_GIF-to-Images (2)/9.jpeg" id="10_3pqrg"]
+[ext_resource type="Texture2D" uid="uid://clxdxl0wd5ypm" path="res://png/11zon_GIF-to-Images (2)/10.jpeg" id="11_hy45y"]
+[ext_resource type="Texture2D" uid="uid://ckn0acu2154dh" path="res://png/11zon_GIF-to-Images (2)/11.jpeg" id="12_t8y4q"]
+[ext_resource type="Texture2D" uid="uid://b44yjijvijkd7" path="res://png/11zon_GIF-to-Images (2)/12.jpeg" id="13_r6k1t"]
+[ext_resource type="Texture2D" uid="uid://vut7ttb1uoyd" path="res://png/11zon_GIF-to-Images (2)/13.jpeg" id="14_viaqv"]
+[ext_resource type="Texture2D" uid="uid://cmv14f0salthc" path="res://png/11zon_GIF-to-Images (2)/14.jpeg" id="15_fkev1"]
+[ext_resource type="Texture2D" uid="uid://detxcvpgkh7in" path="res://png/11zon_GIF-to-Images (2)/NEN.PNG" id="16_qcse6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aaptn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lfy6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qx8sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wwmul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a7tfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lnljo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jdyya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d55l6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_af83j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_me04n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3pqrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hy45y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t8y4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_r6k1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_viaqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fkev1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="mainmenu" type="Node2D"]
+script = ExtResource("1_5oru5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 331.0
+offset_top = 11.0
+offset_right = 683.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_aaptn")
+text = "ADVENTURE"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 399.0
+offset_top = 242.0
+offset_right = 564.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 16
+text = "PLAY GAME"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(173.844, 179.936)
+scale = Vector2(0.38175, 0.383523)
+sprite_frames = SubResource("SpriteFrames_8lfy6")
+autoplay = "default"
+frame_progress = 0.983896
+
+[node name="Nen" type="Sprite2D" parent="."]
+position = Vector2(481.75, 181.375)
+scale = Vector2(0.438, 0.386848)
+texture = ExtResource("16_qcse6")
+
+[node name="Nen2" type="Sprite2D" parent="."]
+position = Vector2(-134, 181)
+scale = Vector2(0.438, 0.386848)
+texture = ExtResource("16_qcse6")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

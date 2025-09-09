@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8v8ai2ol7b8k"
+path="res://.godot/imported/TFT Set 10 - 8-bit Music.mp3-db30c75e3d8f1b865c91a27189f325d5.mp3str"
+
+[deps]
+
+source_file="res://music/TFT Set 10 - 8-bit Music.mp3"
+dest_files=["res://.godot/imported/TFT Set 10 - 8-bit Music.mp3-db30c75e3d8f1b865c91a27189f325d5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

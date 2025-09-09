@@ -1,0 +1,115 @@
+[gd_scene load_steps=23 format=3 uid="uid://bkyman20ch0pl"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_j84x5"]
+[ext_resource type="Texture2D" uid="uid://be1gvp2d6rq15" path="res://png/png_player/player_idle1.png" id="2_tsr7a"]
+[ext_resource type="Texture2D" uid="uid://c0ivy62xtiqae" path="res://png/png_player/player_idle2.png" id="3_6pmbk"]
+[ext_resource type="Texture2D" uid="uid://bbx2gkv05b4gn" path="res://png/png_player/player_idle3.png" id="4_v2edv"]
+[ext_resource type="Texture2D" uid="uid://c2g68kpy61h5m" path="res://png/png_player/player_idle4.png" id="5_lgkmh"]
+[ext_resource type="Texture2D" uid="uid://v7xf6w0y4a7a" path="res://png/png_player/player_idle5.png" id="6_dhayy"]
+[ext_resource type="Texture2D" uid="uid://cgjuvmgcxss1m" path="res://png/png_player/player_jump1.png" id="7_ehbe8"]
+[ext_resource type="Texture2D" uid="uid://cgv1tldb7vtht" path="res://png/png_player/player_jump2.png" id="8_ma262"]
+[ext_resource type="Texture2D" uid="uid://bpqglk64las5x" path="res://png/png_player/player_jump3.png" id="9_0x1kg"]
+[ext_resource type="Texture2D" uid="uid://bv631u4t26lkk" path="res://png/png_player/player_jump4.png" id="10_8vsb1"]
+[ext_resource type="Texture2D" uid="uid://dadcjdpiwrn34" path="res://png/png_player/player_jump5.png" id="11_0t6u7"]
+[ext_resource type="Texture2D" uid="uid://cvlwnpnrwu7qr" path="res://png/png_player/player_jump6.png" id="12_hnf26"]
+[ext_resource type="Texture2D" uid="uid://tdn7dfxbetrp" path="res://png/png_player/player_run1.png" id="13_e5uxw"]
+[ext_resource type="Texture2D" uid="uid://crknvo4sgxl4x" path="res://png/png_player/player_run2.png" id="14_jpjtr"]
+[ext_resource type="Texture2D" uid="uid://8wheu6mut75p" path="res://png/png_player/player_run3.png" id="15_a3eyd"]
+[ext_resource type="Texture2D" uid="uid://c2v7j5oxpclj" path="res://png/png_player/player_run4.png" id="16_7gx8m"]
+[ext_resource type="Texture2D" uid="uid://bd7eujm0qjetu" path="res://png/png_player/player_run5.png" id="17_4vnth"]
+[ext_resource type="Texture2D" uid="uid://gwj48cneo6y6" path="res://png/png_player/player_run6.png" id="18_lf1lr"]
+[ext_resource type="Texture2D" uid="uid://drv3bk6x2twkr" path="res://png/png_player/player_run7.png" id="19_sawsl"]
+[ext_resource type="Texture2D" uid="uid://cgvv7fqwdvcb0" path="res://png/png_player/player_run8.png" id="20_c4sep"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tq2kw"]
+radius = 38.0
+height = 116.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_awb15"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tsr7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6pmbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v2edv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lgkmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dhayy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ehbe8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ma262")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0x1kg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8vsb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0t6u7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hnf26")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_e5uxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jpjtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_a3eyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7gx8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4vnth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_lf1lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_sawsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_c4sep")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_j84x5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_tq2kw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_awb15")
+animation = &"idle"
+frame_progress = 0.352352
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.6, 2.6)

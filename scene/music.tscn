@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://55srkwpqjkr3"]
+
+[ext_resource type="AudioStream" uid="uid://8v8ai2ol7b8k" path="res://music/TFT Set 10 - 8-bit Music.mp3" id="1_yo2xi"]
+
+[node name="music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_yo2xi")
+autoplay = true
+bus = &"MUSIC"

@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtvxg16px667w"]
+
+[ext_resource type="Texture2D" uid="uid://cysmogqahsr10" path="res://png/png_player/Fire Breath hit effect SpriteSheet.png" id="1_rutxm"]
+[ext_resource type="Script" path="res://bulletimpacteffect.gd" id="2_enxel"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28pqc"]
+atlas = ExtResource("1_rutxm")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a38ax"]
+atlas = ExtResource("1_rutxm")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu66h"]
+atlas = ExtResource("1_rutxm")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgtyq"]
+atlas = ExtResource("1_rutxm")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3osbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28pqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a38ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vu66h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgtyq")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"impact",
+"speed": 10.0
+}]
+
+[node name="bulletimpacteffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_3osbe")
+animation = &"impact"
+autoplay = "impact"
+frame = 4
+frame_progress = 0.355342
+script = ExtResource("2_enxel")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

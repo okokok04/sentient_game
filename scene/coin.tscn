@@ -1,0 +1,64 @@
+[gd_scene load_steps=13 format=3 uid="uid://347bvnn0laa4"]
+
+[ext_resource type="Script" path="res://Player/coin.gd" id="1_7gjpq"]
+[ext_resource type="Texture2D" uid="uid://bjlo21pf3ato8" path="res://png/coin/1.png" id="1_akwev"]
+[ext_resource type="Texture2D" uid="uid://db38hxpr5442r" path="res://png/coin/2.png" id="2_xptki"]
+[ext_resource type="Texture2D" uid="uid://cyq85e8l8j7gq" path="res://png/coin/3.png" id="3_n4fej"]
+[ext_resource type="Texture2D" uid="uid://2tjlchv76cku" path="res://png/coin/4.png" id="4_v7qdv"]
+[ext_resource type="Texture2D" uid="uid://bfmqthb1oceu4" path="res://png/coin/5.png" id="5_b3pxm"]
+[ext_resource type="Texture2D" uid="uid://b5o6h0ckkg5g4" path="res://png/coin/6.png" id="6_kxumd"]
+[ext_resource type="Texture2D" uid="uid://81h37mo6c72m" path="res://png/coin/7.png" id="7_ehy35"]
+[ext_resource type="Texture2D" uid="uid://cyii0mpqtv566" path="res://png/coin/8.png" id="8_6qkqh"]
+[ext_resource type="Texture2D" uid="uid://cbp7hpvoyopeg" path="res://png/coin/9.png" id="9_qlgov"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_63ig6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_akwev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xptki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n4fej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v7qdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b3pxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kxumd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ehy35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6qkqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qlgov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1bqdm"]
+radius = 12.0416
+
+[node name="coin" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_7gjpq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_63ig6")
+autoplay = "default"
+frame_progress = 0.473439
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1bqdm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

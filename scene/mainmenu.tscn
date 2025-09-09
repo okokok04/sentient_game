@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://droe5oxdtroxs"]
+
+[ext_resource type="Script" path="res://mainmenu.gd" id="1_5oru5"]
+
+[node name="mainmenu" type="Node2D"]
+script = ExtResource("1_5oru5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 62.0
+offset_top = 19.0
+offset_right = 584.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 60
+text = "OXYZ ADVENTURE"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 244.0
+offset_top = 164.0
+offset_right = 409.0
+offset_bottom = 201.0
+theme_override_font_sizes/font_size = 16
+text = "PLAY GAME"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
